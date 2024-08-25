@@ -1,7 +1,10 @@
 import { Hono } from "hono";
 import { prettyJSON } from "hono/pretty-json";
+import auth from "./auth/auth";
 
 const app = new Hono();
+
+app.route("/auth", auth);
 
 const blogPosts = [
   {
